@@ -1,0 +1,7 @@
+#!/bin/sh
+set -x
+rm -f $HOME/.homebrew-backup/Brewfile.conf
+brew bundle dump --file=$HOME/.homebrew-backup/Brewfile.conf
+git -C $HOME/.homebrew-backup diff --shortstat
+git -C $HOME/.homebrew-backup commit --all --allow-empty-message -m ''
+git -C $HOME/.homebrew-backup push origin master
