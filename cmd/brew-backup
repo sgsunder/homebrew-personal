@@ -1,5 +1,0 @@
-#!/bin/sh
-# Backs up to Google Drive on application folder `appDataFolder`
-brew bundle dump --file=/dev/stdout | rclone rcat gdrive-backup:/HomebrewBackup.txt
-echo "Backed up Homebrew to Google Drive"
-
