@@ -10,6 +10,8 @@ class Waifu2xConverterCpp < Formula
   depends_on "opencv"
 
   def install
+    inreplace "src/modelHandler_OpenCL.cpp", "std::filesystem", "std::__fs::filesystem"
+    inreplace "src/main.cpp", "std::filesystem", "std::__fs::filesystem"
     system "cmake", ".", *std_cmake_args, "-DOPENCV_PREFIX=#{include}/opencv"
     system "make"
     system "make", "install"
