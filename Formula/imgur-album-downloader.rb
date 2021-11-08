@@ -5,8 +5,6 @@ class ImgurAlbumDownloader < Formula
 
   version "1.0.0"
 
-  bottle :unneeded
-
   depends_on "jsawk"
   depends_on "curl"
   depends_on "libiconv"
